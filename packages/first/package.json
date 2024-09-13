@@ -1,0 +1,67 @@
+{
+  "name": "@sefa-fesa/first",
+  "version": "1.0.6",
+  "description": "A cli development cli for developers who want to create clis for sefa.",
+  "author": "sefa",
+  "license": "ISC",
+  "type": "module",
+  "main": "/build/index.js",
+  "types": "/build/index.d.ts",
+  "bin": {
+    "sefa-fesa-first": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0",
+    "@oclif/core": "4.0.21",
+    "axios": "^1.7.7",
+    "chokidar": "^3.6.0",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0",
+    "consola": "^3.2.3",
+    "figlet": "^1.7.0",
+    "open": "^10.1.0",
+    "unzipper": "^0.12.1"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^22.5.2",
+    "@types/unzipper": "^0.10.10",
+    "jest": "^29.7.0",
+    "mock-fs": "^5.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "oclif": {
+    "bin": "sefa-fesa-first",
+    "commands": {
+      "strategy": "explicit",
+      "target": "./build/index.js",
+      "identifier": "COMMANDS"
+    },
+    "dirname": "sefa-fesa-first",
+    "topicSeparator": " ",
+    "topics": {
+      "first": {
+        "description": "iç First işlemleri"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "build"
+  ],
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "@sefa-fesa/last",
+  "version": "1.0.8",
+  "description": "A cli development cli for developers who want to create clis for sefa.",
+  "author": "sefa",
+  "license": "ISC",
+  "type": "module",
+  "main": "/build/index.js",
+  "types": "/build/index.d.ts",
+  "bin": {
+    "sefa-fesa-last": "./bin/run.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@oclif/core": "4.0.21",
+    "consola": "^3.2.3",
+    "figlet": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^22.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "oclif": {
+    "bin": "sefa-fesa-last",
+    "commands": {
+      "strategy": "explicit",
+      "target": "./build/index.js",
+      "identifier": "COMMANDS"
+    },
+    "dirname": "sefa-fesa-last",
+    "topicSeparator": " ",
+    "topics": {
+      "last": {
+        "description": "iç Last işlemleri"
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "build"
+  ],
+  "exports": {
+    ".": {
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    }
+  }
+}

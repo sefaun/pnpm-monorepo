@@ -1,0 +1,17 @@
+node_modules
+*.log*
+.yarn
+.nitro
+.cache
+.output
+.env
+dist
+yarn.lock
+.idea
+package-lock.json
+.DS_Store
+bin/.hidden
+src/.environment
+build
+*.com/
+*.com.*/

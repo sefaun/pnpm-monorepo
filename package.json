@@ -1,0 +1,66 @@
+{
+  "name": "sefa-fesa",
+  "version": "1.1.0",
+  "description": "sefa CLI Application",
+  "author": "sefa",
+  "license": "ISC",
+  "type": "module",
+  "packageManager": "pnpm@9.9.0",
+  "bin": {
+    "sefa-fesa": "./dist/bin/run.js"
+  },
+  "scripts": {
+    "build": "pnpm -r build && tsc --project tsconfig.base.json",
+    "postbuild": "node scripts/build.js",
+    "build:all": "pnpm build && pnpm postbuild"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0",
+    "@oclif/core": "4.0.21",
+    "@sefa-fesa/first": "1.0.6",
+    "@sefa-fesa/last": "1.0.8",
+    "axios": "^1.7.7",
+    "chokidar": "^3.6.0",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0",
+    "consola": "^3.2.3",
+    "figlet": "^1.7.0",
+    "open": "^10.1.0",
+    "unzipper": "^0.12.1"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "^3.11.6",
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^22.5.2",
+    "@types/unzipper": "^0.10.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">= 18"
+  },
+  "oclif": {
+    "bin": "sefa-fesa",
+    "dirname": "sefa-fesa",
+    "commands": {
+      "strategy": "explicit",
+      "target": "./dist/cli/index.js",
+      "identifier": "COMMANDS"
+    },
+    "topicSeparator": " ",
+    "topics": {
+      "first": {
+        "description": "First işlemler"
+      },
+      "last": {
+        "description": "Last işlemler"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ]
+}
