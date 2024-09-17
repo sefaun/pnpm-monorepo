@@ -1,50 +1,51 @@
 {
-  "name": "@sefa-fesa/last",
-  "version": "1.0.9",
-  "description": "A cli development cli for developers who want to create clis for sefa.",
+  "name": "sefa-fesa",
+  "version": "1.1.5",
+  "description": "sefa CLI Application",
   "author": "sefa",
   "license": "ISC",
   "type": "module",
+  "packageManager": "pnpm@9.9.0",
   "main": "/build/index.js",
   "types": "/build/index.d.ts",
   "bin": {
-    "sefa-fesa-last": "./bin/run.js"
+    "sefa-fesa": "./bin/run.js"
   },
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "build": "tsc"
   },
   "dependencies": {
     "@oclif/core": "4.0.21",
-    "consola": "^3.2.3",
-    "figlet": "^1.7.0"
+    "@sefa-fesa/first": "1.0.7",
+    "@sefa-fesa/last": "1.0.9"
   },
   "devDependencies": {
-    "@types/figlet": "^1.5.8",
     "@types/node": "^22.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   },
+  "engines": {
+    "node": ">= 18"
+  },
   "oclif": {
-    "bin": "sefa-fesa-last",
+    "bin": "sefa-fesa",
+    "dirname": "sefa-fesa",
     "commands": {
       "strategy": "explicit",
       "target": "./build/index.js",
       "identifier": "COMMANDS"
     },
-    "dirname": "sefa-fesa-last",
     "topicSeparator": " ",
     "topics": {
+      "first": {
+        "description": "First işlemler"
+      },
       "last": {
-        "description": "iç Last işlemleri"
+        "description": "Last işlemler"
       }
     }
   },
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
-    "bin",
     "build"
   ],
   "exports": {

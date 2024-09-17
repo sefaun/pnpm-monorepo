@@ -1,13 +1,24 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "module": "ESNext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES6",
+    "moduleResolution": "Node",
+    "sourceMap": true,
     "outDir": "build",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "noImplicitAny": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+		"lib": [ "ESNext" ],
   },
-  "exclude": [
-    "node_modules",
-    "tests"
-  ],
+  "ts-node": {
+    "esm": true
+  },
   "include": [
-    "**/*",
+    "**/*"
   ]
 }
