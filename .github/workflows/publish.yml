@@ -26,17 +26,20 @@ jobs:
       - name: Publish last package
         working-directory: packages/last
         run: npm publish
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
 
       - name: Publish first package
         working-directory: packages/first
         run: npm publish
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
 
       - name: Publish CLI package
         working-directory: packages/cli
         run: npm publish
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
