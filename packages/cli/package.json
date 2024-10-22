@@ -16,8 +16,8 @@
   },
   "dependencies": {
     "@oclif/core": "4.0.21",
-    "@sefa-fesa/first": "1.0.8",
-    "@sefa-fesa/last": "1.1.0"
+    "@sefa-fesa/first": "workspace:*",
+    "@sefa-fesa/last": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.5.2",
