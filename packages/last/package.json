@@ -1,6 +1,6 @@
 {
   "name": "@sefa-fesa/last",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "description": "A cli development cli for developers who want to create clis for sefa.",
   "author": "sefa",
   "license": "ISC",

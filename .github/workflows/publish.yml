@@ -1,0 +1,28 @@
+name: Publish NPM
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm i -g pnpm@9.9.0
+      - run: pnpm i
+      - run: pnpm build
+      - run: cd packages/last
+      - run: npm publish
+      - run: cd ..
+      - run: cd packages/first
+      - run: npm publish
+      - run: cd ..
+      - run: cd packages/cli
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
