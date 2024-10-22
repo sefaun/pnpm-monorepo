@@ -13,16 +13,25 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
+          cache: 'pnpm'
       - run: npm i -g pnpm@9.9.0
       - run: pnpm i
       - run: pnpm build
-      - run: cd packages/last
-      - run: npm publish
-      - run: cd ..
-      - run: cd packages/first
-      - run: npm publish
-      - run: cd ..
-      - run: cd packages/cli
-      - run: npm publish
+
+      - name: Publish last package
+        working-directory: packages/last
+        run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+      - name: Publish first package
+        working-directory: packages/first
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+
+      - name: Publish CLI package
+        working-directory: packages/cli
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
