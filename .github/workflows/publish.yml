@@ -15,7 +15,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: npm i -g pnpm@9.9.0
-      - run: pnpm i --no-frozen-lockfile
+      - run: pnpm i
       - run: pnpm build
 
       - name: Publish last package
